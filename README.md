@@ -1,4 +1,4 @@
-# React + Vite
+# Payment Page with React
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -21,3 +21,11 @@ This Docker image contains a React application along with Node.js to build and s
 
    ```bash
    git clone https://github.com/atorpos/PaymentPage-React.git
+   
+2. Go to the Project Folder
+3. Build the Docker image using the provided Dockerfile:
+    ```bash
+   docker build -t my-react-app
+4. Once the image is build, run a container based on that image:
+   ```bash
+   docker run -p 3000:3000 my-react-app
