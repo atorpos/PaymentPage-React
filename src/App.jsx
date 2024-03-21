@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css'
 import Header from "./components/Header.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,17 +14,13 @@ function App() {
       <Router>
           <div className="card">
               <Header title="Payment Page"></Header>
-              <Switch>
-                  <Route path="/" exact>
-                      <Cart setTotal={setTotal}></Cart>
-                  </Route>
-                  <Route path="/order-completed">
-                      <Order></Order>
-                  </Route>
-              </Switch>
+              <Routes>
+                  <Route path="/" element={<Cart setTotal={setTotal} />} />
+                  <Route path="/order-completed" element={<Order />} />
+              </Routes>
           </div>
           <p className="read-the-docs">
-              Click on the Vite and React logos to learn more
+
           </p>
       </Router>
   )

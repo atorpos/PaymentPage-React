@@ -3,6 +3,7 @@ import CreditCard from './CreditCard';
 import Paypal from "./Paypal.jsx"; // Assuming CreditCard is a JS component. If not, you need to convert that too.
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import QRPayment from "./QRPayment.jsx";
 const PaymentMethods = (props) => {
     const [selectedMethod, setSelectedMethod] = useState(null);
 
@@ -48,7 +49,7 @@ const PaymentMethods = (props) => {
             )}
             {selectedMethod === 'PayPal' && (<Paypal></Paypal>)}
             {selectedMethod === 'Bank Transfer' && (<div>Bank Transfer</div>)}
-            {selectedMethod === 'QR Code' && (<div>QR CODE</div>)}
+            {selectedMethod === 'QR Code' && (<QRPayment amount={parseInt(props.amount, 10)} />)}
             </div>
         </div>
     );
